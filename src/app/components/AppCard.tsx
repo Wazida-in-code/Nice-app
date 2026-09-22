@@ -1,5 +1,6 @@
 import { AppType } from '@/types/apps.type';
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
 
 interface AppProps{
@@ -7,6 +8,7 @@ interface AppProps{
 }
 
 const AppCard = ({app}: AppProps) => {
+  const {id} = app
   return (
     <div>
     <div className="bg-white rounded-2xl border border-gray-200 p-4 shadow-sm hover:shadow-lg transition-all duration-300">
@@ -78,9 +80,11 @@ const AppCard = ({app}: AppProps) => {
       </div>
 
       {/* Button */}
-      <button className="w-full mt-5 bg-green-600 hover:bg-green-700 text-white font-semibold py-2.5 rounded-xl transition">
-        Install
-      </button>
+      <Link href={`/apps/${id}`}>
+        <button className="w-full mt-5 bg-green-600 hover:bg-green-700 text-white font-semibold py-2.5 rounded-xl transition">
+             App Details
+        </button>
+      </Link>
     </div>
     </div>
   );
