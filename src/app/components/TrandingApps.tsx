@@ -1,12 +1,7 @@
 import { AppType } from "@/types/apps.type";
 import AppCard from "./AppCard";
+import { getAllApps } from "@/lib/apps";
 
-
-const getAllApps = async() => {
-    const res = await fetch('http://localhost:3000/data.json');
-    const data = await res.json();
-    return data
-}
 
 const TrandingApps = async() => {
     const data = await getAllApps()
@@ -14,9 +9,9 @@ const TrandingApps = async() => {
     return (
         <div className="my-[80px] w-11/12 mx-auto">
             <div className="space-y-4 max-w-[400px] text-center mx-auto">
-                <h2 className="font-bold text-4xl">Trending apps</h2>
+                <h2 className="font-bold text-4xl">All apps</h2>
                 <p>
-                    Explore all tranding apps on the market developed by top developers.
+                    Explore all apps on the market developed by top developers.
                 </p>
             </div>
 
