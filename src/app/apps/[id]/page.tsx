@@ -1,3 +1,4 @@
+import InstallBtn from '@/app/components/InstallBtn';
 import { getAllApps } from '@/lib/apps';
 import { AppType } from '@/types/apps.type';
 import Image from 'next/image';
@@ -71,9 +72,7 @@ const AppDetails = async ({ params }: AppDetailsProps) => {
                   </p>
                 </div>
 
-                <button className="btn btn-primary">
-                  Install App
-                </button>
+                <InstallBtn app={app} />
               </div>
 
               {/* Stats */}
